@@ -1,0 +1,74 @@
+html, body{
+	margin: 0px;
+	padding: 0px;
+}
+
+h1, h2, h3, h4{
+	margin: 0px;
+}
+
+.navbar{
+	margin-bottom: 0px;
+	border-radius: 0px;
+}
+
+.selebaran{
+	width: 100%;
+	background: url(../img/graha.jpg);
+	background-size: cover;
+}
+
+.selebaran h2{
+	margin: 0px;
+	text-align: center;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	color: white;
+	font-family: "century gothic";
+	font-size: 40px;
+}
+
+.moneymaker{
+	background-color: #4da6ff;
+	text-align: center;
+	color: white;
+}
+
+.moneymaker h2{
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+.moneymaker h4{
+	padding-bottom: 50px;
+}
+
+.kredit{
+	color: #333;
+	background-color: black;
+	font-size: 12px;
+	text-align: center;
+	padding: 10px;
+}
+
+.kredit:hover{
+	color: white;
+}
+
+.jarak{
+	padding-top: 225px;
+	padding-bottom: 225px;
+	background-color: #4da6ff;
+}
+
+@media screen and (max-width: 768px){
+	.selebaran h2{
+		font-size: 35px;
+	}
+}
+
+@media screen and (max-width: 320px){
+	.selebaran h2{
+		font-size: 30px;
+	}
+}

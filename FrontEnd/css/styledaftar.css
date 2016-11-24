@@ -1,0 +1,40 @@
+html, body{
+	margin: 0px;
+	padding: 0px;
+}
+
+h1, h2, h3, h4{
+	margin: 0px;
+}
+
+.navbar{
+	margin-bottom: 0px;
+	border-radius: 0px;
+}
+
+.pencarian{
+	padding-top: 20px;
+	width: 30%;
+	float: left;
+}
+
+.pagination{
+	float: right;
+}
+
+.editdata{
+	padding-top: 20px;
+}
+
+.atasan{
+	text-align: center;
+	font-size: 25px;
+	font-family: "century gothic";
+	background-color: #4da6ff;
+	color: white;
+	padding: 10px;
+}
+
+.btn{
+	margin-bottom: 20px;
+}

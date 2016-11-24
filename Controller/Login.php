@@ -33,6 +33,7 @@ class Login extends CI_Controller {
 		
 	}
 
+	//Fungsi logout
 	public function logout() {
 	$this->simple_login->logout();
 	}

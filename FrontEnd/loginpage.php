@@ -14,7 +14,7 @@
   	<div class="row">
 	    <div class="col-xs-1 col-sm-3 col-md-4"></div>
 	    <div class="col-xs-10 col-sm-6 col-md-4">
-	    	<form action="" method="POST">
+	    	<form action="<?php echo site_url('Auth/login');?>" method="POST"> //menghubungkan ke controller
 			  <div class="form-group">
 			    <label for="username">Username:</label>
 			    <input type="text" class="form-control" id="username" name="Username" placeholder="Username">
@@ -30,29 +30,5 @@
 	    <div class="col-xs-1 col-sm-3 col-md-4"></div>
   	</div>	
 </div>
-
-<?php session_start(); /* Starts the session */
-	
-	/* Check Login form submitted */	
-	if(isset($_POST['Submit'])){
-		/* Define username and associated password array */
-		$logins = array('bennymesum' => 'jembutkuda','bennyngaceng' => 'coli','benny' => 'mesum');
-		
-		/* Check and assign submitted Username and Password to new variable */
-		$Username = isset($_POST['Username']) ? $_POST['Username'] : '';
-		$Password = isset($_POST['Password']) ? $_POST['Password'] : '';
-		
-		/* Check Username and Password existence in defined array */		
-		if (isset($logins[$Username]) && $logins[$Username] == $Password){
-			/* Success: Set session variables and redirect to Protected page  */
-			$_SESSION['UserData']['Username']=$logins[$Username];
-			header("location:index.php");
-			exit;
-		} else {
-			/*Unsuccessful attempt: Set error message */
-			$msg="<span style='color:red'>Invalid Login Details</span>";
-		}
-	}
-	?>
 </body>
 </html>

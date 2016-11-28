@@ -19,7 +19,7 @@ class Simple_login {
 		 redirect(base_url('dasbor'));
 		 }else{
 		 $this->CI->session->set_flashdata('sukses','Oops... Username/password salah');
-		 redirect(base_url('login'));
+		 redirect(base_url('Auth/login'));
 		 }
 		 return false;
 	 }
@@ -27,7 +27,7 @@ class Simple_login {
 	 public function cek_login() {
 		 if($this->CI->session->userdata('username') == '') {
 		 $this->CI->session->set_flashdata('sukses','Anda belum login');
-		 redirect(base_url('login'));
+		 redirect(base_url('Auth/login'));
 		 }
 	 }
  // Fungsi logout
@@ -36,6 +36,6 @@ class Simple_login {
  $this->CI->session->unset_userdata('id_login');
  $this->CI->session->unset_userdata('id');
  $this->CI->session->set_flashdata('sukses','Anda berhasil logout');
- redirect(base_url('login'));
+ redirect(base_url('Auth/login'));
  }
 }

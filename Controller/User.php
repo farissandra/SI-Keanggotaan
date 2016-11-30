@@ -29,7 +29,7 @@ class User extends CI_Controller {
 	function tambah(){
 		   // set form validation rules
         $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[3]|max_length[30]');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|matches[cpassword]|md5');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|matches[cpassword]');
         $this->form_validation->set_rules('cpassword', 'Confirm Password', 'trim|required');
 
         // submit

@@ -56,8 +56,8 @@ class Anggota1 extends CI_Controller {
 			 ->display_as('nrp_anggota','NRP');
 		$crud->set_field_upload('foto_anggota','assets/uploads/files');
 		$crud->fields('na_anggota','nama_anggota','nrp_anggota','alamat_sby','alamat_asal','tanggal_lahir','tanggal_terdaftar','foto_anggota');
-		$crud->set_rules('na_anggota','Nomor Anggota','integer');
-		$crud->set_rules('nrp_anggota','NRP Anggota','integer');
+		$crud->set_rules('na_anggota','Nomor Anggota','integer|required|min_length[3]|is_unique[anggota.na_anggota]');
+		$crud->set_rules('nrp_anggota','NRP Anggota','integer|required|min_length[9]|is_unique[anggota.nrp_anggota]');
 
 		//$crud->callback_before_insert(array($this, 'iuran_insert'));
 		//$crud->callback_before_delete(array($this,'delete_anggota'));

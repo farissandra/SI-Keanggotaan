@@ -14,8 +14,11 @@ class Anggota1 extends CI_Controller {
 
 		$this->load->database();
 		$this->load->helper('url');
-
 		$this->load->library('grocery_CRUD');
+		
+		if (!$this->session->userdata('username')) {
+			redirect('Auth/login');
+		}
 	}
 
 	public function _example_output($output = null)

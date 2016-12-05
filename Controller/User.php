@@ -28,7 +28,7 @@ class User extends CI_Controller {
 
 	function tambah(){
 		   // set form validation rules
-        $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[3]|max_length[30]');
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[3]|max_length[30]|is_unique[users.username]');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|matches[cpassword]');
         $this->form_validation->set_rules('cpassword', 'Confirm Password', 'trim|required');
 
@@ -125,10 +125,17 @@ class User extends CI_Controller {
         $db_id = $my_info->id_user;
 
         }
+	    
+	$npassword = $this->input->post('npassword');
+        $hash = $this->bcrypt->hash_password($npassword);
+        $opassword = $this->input->post('opassword');
 
-        if(md5($this->input->post('opassword')) == $db_password){
+	    foreach($sql->result() as $row){
+            $stored_hash = $row->password;
+	if($this->bcrypt->check_password($opassword,$stored_hash)){
+        if($stored_hash == $db_password){
             error_reporting(0);
-        $fixed_pw = mysql_real_escape_string(md5($this->input->post('npassword')));
+        $fixed_pw = mysql_real_escape_string($npassword);
         $update = $this->db->query("UPDATE users SET password='$fixed_pw' WHERE id_user='$db_id'")or die(mysql_error());
         // $update = $this->db->
         // $update = $this->db->update('users');
@@ -136,13 +143,17 @@ class User extends CI_Controller {
         <strong>Password Updated!</strong></div>');
         return false;
 
-        }else
-        $this->form_validation->set_message('change','<div class="alert alert-error"><a href="#" class="close" data-dismiss="alert">&times;</a>
-        <strong>Wrong Old Password!</strong> </div>');
+        }else{
+        
+	}
+	}else{
+		$this->form_validation->set_message('change','<div class="alert alert-error"><a href="#" class="close" data-dismiss="alert">&times;</a>
+		<strong>Wrong Old Password!</strong> </div>');
 
-        return false;
-
-}
+		return false;
+		}
+	}
+    }
 
 	// function profile(){
 	// 		$details = $this->User_model->get_user_by_id($this->session->userdata('id_user'));

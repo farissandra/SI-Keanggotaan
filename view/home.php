@@ -1,8 +1,19 @@
-
+<div class="mySlides">
 	<div class="selebaran">
-		<h2>Sistem Informasi Anggota<br>
-		Kopma dr. Angka ITS</h2>
+		<h2>KOPMA dr.ANGKA ITS</br></h2>
 	</div>
+</div>
+<div class="mySlides">
+	<div class="selebaran-2">
+		<h2>BISNIS - ORGANISASI - KELUARGA</br></h2>
+	</div>
+</div>
+<div class="mySlides">
+	<div class="selebaran-3">
+		<h2>APA YANG KALIAN TUNGGU?</br></h2>
+	</div>
+</div>
+
 	<div class="moneymaker">
 	<div class="row">
 	<!--Sisi Kiri -->
@@ -22,4 +33,5 @@
 
 		</div>
 	</div>
+<script type="text/javascript" src="<?php echo base_url(''); ?>assets/js/jquery.js"></script>
 </body>

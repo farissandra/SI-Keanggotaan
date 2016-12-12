@@ -1,12 +1,12 @@
 # SI-Keanggotaan
 
 Tim Dev
--Burhanuddin A 5215100089
--Benedict T 5215100055
--Dewi A 5215100063
+-Burhanuddin Ahmad 5215100089
+-Benedict Timotius Christian 5215100055
+-Dewi Aprillia 5215100063
 
 Scrum Master 
--Faris S 5215100120
+-Muhammad Faris Sandra 5215100120
 
 Product Owner
--Prasasti K 5215100073
+-Prasasti Karunia Farista Ananto 5215100073
